@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Agenda Telefónica</h1>
+
+  <!-- Formulario para agregar contactos -->
+
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" type="text" [(ngModel)]="nombre" name="nombre" required>
+    </div>
+    <div>
+      <label for="edad">Edad:</label>
+      <input id="edad" type="number" [(ngModel)]="edad" name="edad" required>
+    </div>
+    <div>
+      <label for="telefono">Teléfono:</label>
+      <input id="telefono" type="text" [(ngModel)]="telefono" name="telefono" required>
+    </div>
+    <button type="button" text="Guardar" (click)="guardar()">Agregar Contacto</button>
+
+
+  <!-- Tabla que muestra la lista de contactos -->
+  <!-- <h2>Lista de Contactos</h2> -->
+  <table *ngIf="agenda.length>0">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contacto of agenda; let i = index">
+        <td>{{ contacto.nombre }}</td>
+        <td>{{ contacto.edad }}</td>
+        <td>{{ contacto.telefono }}</td>
+        <td>
+          <button (click)="eliminarContacto(i)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
