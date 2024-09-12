@@ -2,13 +2,13 @@ export class Pais{
   nombre:string;
   continente:string;
   capital:string;
-  poblacion:Number;
+  poblacion:number;
   bandera:string;
 
   constructor(nombre:string,
     continente:string,
     capital:string,
-    poblacion:Number,
+    poblacion:number,
     bandera:string
   ){
     this.nombre = nombre;

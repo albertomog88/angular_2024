@@ -1,0 +1,28 @@
+<div class="formulario">
+  <div>
+      <label for="">URL </label>
+      <input type="text" [(ngModel)]="urlB"> <!-- ngModel para recoger datos de la vista al Controlador. -->
+      <br>
+      <br>
+      <input type="button" value="Buscar Por URL" (click)="buscarPorURL()">
+      <br>
+      <br>
+      <br>
+      <!-- <table border="1" *ngIf="resultados?.length>0">
+        <tr><th>Url</th><th>Tematica</th><th>Descripcion</th></tr>
+        <tr *ngFor="let r of resultados">
+          <td>{{r.url}}</td><td>{{r.tematica}}</td><td>{{r.descripcion}}</td>
+        </tr>
+      </table> -->
+      <div *ngIf="resultado">
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{resultado.url}}</li>
+            <li class="list-group-item">{{resultado.tematica}}</li>
+            <li class="list-group-item">{{resultado.descripcion}}</li>
+          </ul>
+        </div>
+    </div>
+
+  </div>
+</div>

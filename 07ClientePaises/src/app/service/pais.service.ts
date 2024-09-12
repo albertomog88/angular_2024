@@ -7,18 +7,17 @@ import { Pais } from '../model/Pais';
   providedIn: 'root'
 })
 export class PaisService {
-
+  url:string = "http://localhost:9000/paises/";
   constructor(private http:HttpClient) {
 
    }
 
-   continentes(){
-    let url:string = "http://localhost:9000/continentes";
-    return this.http.get<Pais[]>(url);
+   continentes():Observable<string[]>{
+    return this.http.get<string[]>(this.url+"continentes");
    }
 
    paisesPorContinentes(continente:string):Observable<Pais[]>{
-    let url:string = "http://localhost:9000/paises/"+continente;
-    return this.http.get<Pais[]>(url);
+
+    return this.http.get<Pais[]>(this.url+"paises/"+continente);
    }
 }
